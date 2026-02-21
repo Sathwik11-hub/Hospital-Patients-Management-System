@@ -2,9 +2,9 @@ from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
-import database_models as models
-from database import SessionLocal, engine
-from models import PatientCreate, PatientResponse
+import backend.database_models as models
+from backend.database import SessionLocal, engine
+from backend.models import PatientCreate, PatientResponse
 
 # create tables
 models.Base.metadata.create_all(bind=engine)
